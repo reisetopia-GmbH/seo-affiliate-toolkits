@@ -54,6 +54,9 @@ ever written to disk.
 | `WEBGAINS_CAMPAIGN_ID` | Webgains | Website/campaign id from the **websites & apps** tab (= `wgcampaignid` in links) |
 | `SOVRN_API_KEY` | Sovrn | Secret key, self-service: platform.sovrn.com → Commerce → Settings |
 
+Alternative names are accepted, so an existing setup does not need duplicate secrets:
+`IMPACT_SID` for `IMPACT_ACCOUNT_SID`, `IMPACT_TOKEN` for `IMPACT_AUTH_TOKEN` and `SOVRN_KEY` for `SOVRN_API_KEY`.
+
 ## Commands
 
 | Network | `programmes` (discovery) | `joined` | `deeplink` | extra |

@@ -57,8 +57,17 @@ UA = "affiliate-networks-toolkit/1.0 (+https://github.com/)"
 
 # ---------------------------------------------------------------- helpers
 
+# Accepted alternative names, so an existing setup that already stores the same
+# secret under a different name does not need a duplicate variable.
+ENV_ALIASES = {
+    "IMPACT_ACCOUNT_SID": "IMPACT_SID",
+    "IMPACT_AUTH_TOKEN": "IMPACT_TOKEN",
+    "SOVRN_API_KEY": "SOVRN_KEY",
+}
+
+
 def env(name, hint):
-    v = os.environ.get(name)
+    v = os.environ.get(name) or os.environ.get(ENV_ALIASES.get(name, ""))
     if not v:
         sys.exit(f"Set the environment variable {name} ({hint}).")
     return v
